@@ -22,14 +22,13 @@ resource "aws_alb_target_group" "projectTG" {
   }
 }
 
-# Redirect all the traffic from the ALB to the target group
 resource "aws_alb_listener" "projectListener" {
   load_balancer_arn = aws_alb.projectALB.arn
-  port = var.app_port
-  protocol = "HTTP"
+  port              = var.app_port
+  protocol          = "HTTP"
 
   default_action {
-    target_group_arn = aws_alb.projectALB.arn
-    type = "forward"
+    target_group_arn = aws_alb_target_group.projectTargetGroup.arn  # Specify the correct target group ARN here
+    type             = "forward"
   }
 }
