@@ -19,7 +19,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 }
 resource "aws_internet_gateway" "igw_project" {
-  vpc_id = aws_vpc.vpcForProject
+  vpc_id = aws_vpc.vpcForProject.id
 }
 resource "aws_route" "internet_access" {
   gateway_id = aws_internet_gateway.igw_project.id
