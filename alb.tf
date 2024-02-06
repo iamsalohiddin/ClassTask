@@ -28,7 +28,7 @@ resource "aws_alb_listener" "projectListener" {
   protocol          = "HTTP"
 
   default_action {
-    target_group_arn = aws_alb_target_group.projectTargetGroup.arn  # Specify the correct target group ARN here
+    target_group_arn = aws_alb_target_group.projectTG.arn  # Specify the correct target group ARN here
     type             = "forward"
   }
 }
