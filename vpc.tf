@@ -38,7 +38,7 @@ resource "aws_nat_gateway" "NAT_Gateway" {
 }
 resource "aws_route_table" "private" {
   count = var.az_count
-  vpc_id = aws_vpc.vpcForProject
+  vpc_id = aws_vpc.vpcForProject.id
 
   route {
     cidr_block = "0.0.0.0/0"
