@@ -5,3 +5,11 @@ resource "aws_s3_bucket" "example" {
     Name        = "BucketSalokhiddin"
   }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "BucketSalokhiddin"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
