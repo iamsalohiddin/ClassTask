@@ -1,10 +1,10 @@
-resource "aws_s3_bucket" "example" {
-  bucket = "BucketSalokhiddin"
+# resource "aws_s3_bucket" "example" {
+#   bucket = "BucketSalokhiddin"
 
-  tags = {
-    Name        = "BucketSalokhiddin"
-  }
-}
+#   tags = {
+#     Name        = "BucketSalokhiddin"
+#   }
+# }
 
 terraform {
   backend "s3" {
