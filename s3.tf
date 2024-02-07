@@ -1,14 +1,14 @@
-# resource "aws_s3_bucket" "example" {
-#   bucket = "BucketSalokhiddin"
+resource "aws_s3_bucket" "example" {
+  bucket = "bucketsalokhiddin"
 
-#   tags = {
-#     Name        = "BucketSalokhiddin"
-#   }
-# }
+  tags = {
+    Name        = "bucketsalokhiddin"
+  }
+}
 
 terraform {
   backend "s3" {
-    bucket = "BucketSalokhiddin"
+    bucket = "bucketsalokhiddin"
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
